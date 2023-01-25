@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/566caf9cb9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?php base_url() ?>assets/styles/Login.css">
     <link rel="stylesheet" href="<?php base_url() ?>assets/styles/Navbar.css">
     <title>Login</title>
@@ -12,20 +14,16 @@
 <body>
     <header>
         <div href="#inicio" id="logoEv" class="logo">
-            <img src="<?php base_url() ?>assets/images/log2.png" alt='Logo'/>
-        </div>
-        <input class="trans-bar" type="checkbox" id="menu-bar" />
-        <label htmlFor="menu-bar" class="fa fa-bars trans-bar"></label>
-        
+            <img class="logo-navbar" src="<?php base_url() ?>assets/images/log.png" alt='Logo'/>
+        </div>        
         <nav class="nav-bar">
-            <a href="#inicio">Inicio</a>
-            <a href="#login">Login</a>
+            <a href="#home">Home</a>
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container-login">
         <div class="container-logo">
-            <img src="<?php base_url() ?>assets/images/log2.png" alt="Logo Roscio">
+            <img src="<?php base_url() ?>assets/images/log1.png" alt="Logo Roscio">
         </div>
        <div class="formulario">
             <form action="" method="post">

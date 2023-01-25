@@ -22,14 +22,14 @@ body{
     background-color: #f0f0f0;
 }
 
-.container{
+.container-login{
     position: relative;
     width: 40rem;
     height: 24rem;
     padding: 0;
     display: flex;
     justify-content: center;
-    margin-top: 10rem;
+    margin-top: 11rem;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
@@ -82,4 +82,35 @@ body{
     color: var(--azulPrincipal);
     border: 2px solid var(--azulPrincipal);
     transition: all .8s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 690px) {
+
+    .container-login{
+        display: block;
+        height: auto;
+        width: 20rem;
+        margin-top: 12rem;
+        margin-bottom: 2rem;
+    }
+   
+    .formulario{
+        width: 100%;
+        padding: 3rem 2rem;
+    }
+
+    .container-logo{
+        position: absolute;
+        visibility: hidden;
+    }
+    
+}
+
+@media (max-width: 915px) {
+
+    .container-login{
+        margin-top: 22rem;
+    }
+   
 }
