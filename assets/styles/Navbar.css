@@ -1,13 +1,4 @@
-:root{
-    --azulPrincipal: #0367A6;
-    --azulSecundario: #03658C;
-    --azulClaro: #63A5BF;
-    --grisOscuro: #262624;
-    --grisClaro: #BFBFBF;
-    --blanco: #F2F2F2;
-}
-
-header{
+.navbar-header{
     position: fixed;
     top: 0;
     left: 0;
@@ -27,7 +18,7 @@ header{
     width: 5rem;
 }
 
-header .nav-bar a{
+.nav-bar a{
     text-decoration: none;
     font-size: 1.5rem;
     margin-left: 2rem;
@@ -35,8 +26,9 @@ header .nav-bar a{
     transition: .5s ease all;
 }
 
-header .nav-bar a:hover{
+.nav-bar a:hover{
     border-bottom: 4px solid var(--blanco);
+    color: var(--blanco);
     transition: .5s ease all;
 }
 

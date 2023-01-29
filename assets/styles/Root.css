@@ -1,0 +1,23 @@
+:root{
+    --azulPrincipal: #0367A6;
+    --azulSecundario: #03658C;
+    --azulClaro: #63A5BF;
+    --grisOscuro: #262624;
+    --grisClaro: #BFBFBF;
+    --blanco: #F2F2F2;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #efefef;
+}
