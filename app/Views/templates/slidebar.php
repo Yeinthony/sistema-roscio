@@ -24,7 +24,7 @@
             </div>
 
             <div class="offcanvas-footer footer-slidebar">
-                <a class="btns-slidebar" href="">
+                <a class="btns-slidebar" href="<?php base_url() ?>salir">
                     <p>Salir</p>
                     <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 </a>
