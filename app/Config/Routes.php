@@ -31,12 +31,15 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-//Rutas de login
+/* RUTAS DE LOGIN */
 $routes->get('login', 'LoginController::index');
 $routes->post('login', 'LoginController::validarDatos');
 $routes->get('salir', 'LoginController::cerrarSesion');
 
-//Rutas de crear Personal
+/* RUTAS DE INICIO */
+$routes->get('inicio', 'InicioController::index');
+
+/* RUTAS DE REGISTRAR */
 $routes->get('personal', 'PersonalController::index');
 
 

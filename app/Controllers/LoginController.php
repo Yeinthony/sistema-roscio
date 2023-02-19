@@ -37,7 +37,7 @@ class LoginController extends BaseController
                     $session = session();
                     $session->set($data);
 
-                    return redirect()->to(base_url('/personal'));
+                    return redirect()->to(base_url('/inicio'));
                 }
                     
             } 

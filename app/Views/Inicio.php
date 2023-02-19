@@ -1,22 +1,19 @@
 <?php include("../sistema-roscio/app/Views/templates/header.php"); ?>
   
-<?php include("../sistema-roscio/app/Views/templates/slidebar.php"); ?>
+<?php include("../sistema-roscio/app/Views/templates/sidebar.php"); ?>
     
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col min-vh-100 p-4">
-                <!-- toggler -->
-                
-                <button class="btn float-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-                    <i class="fa-solid fa-bars icon"></i>
-                </button>
-
-                <div class="container">
-
-                </div>
-
+        <div class="col py-3 px-5">
+            <div class="card mt-5">
+                <div class="p-5 mb-4 bg-light rounded-3">
+                    <div class="container-fluid py-5">
+                      <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+                      <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+                      <button class="btn btn-primary btn-lg" type="button">Example button</button>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>
+</div>
 
 <?php include("../sistema-roscio/app/Views/templates/footer.php"); ?>

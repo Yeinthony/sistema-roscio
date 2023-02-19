@@ -1,0 +1,45 @@
+.container-sidebar{
+    background-color: var(--azulPrincipal);
+}
+
+.img-sidebar-header{
+    width: 4rem;
+}
+
+.link-sidebar{
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+    position: relative;
+}
+
+.link-sidebar:hover{
+    color: rgba(0, 0, 0, .5);
+}
+
+.link-sidebar i{
+    margin-right: 1rem;
+}
+
+
+.option-sidebar{
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+.option-sidebar i{
+    padding-top: .8rem;
+}
+
+.subOptions-sidebar{
+    margin-top: .8rem;
+    position: relative;
+    width: 100%;
+}
+
+.subOptions-sidebar li{
+    padding-left: .5rem;
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+}
