@@ -33,6 +33,7 @@
     </div>
 
     <script>
+        
         let mensaje =  '<?php echo $mensaje ?>';
 
         if (mensaje == '1') {
@@ -42,8 +43,7 @@
         if(mensaje == '0'){
             alert("Usuario o contraseña incorrecta");
         }
-
-        
+       
     </script>
 
-    <?php include("../sistema-roscio/app/Views/templates/header.php"); ?>
+    <?php include("../sistema-roscio/app/Views/templates/footer.php"); ?>
