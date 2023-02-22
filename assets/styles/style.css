@@ -1,0 +1,240 @@
+
+:root{
+    --blanco: #f9f9f9;
+    --azul: #0a7aad;
+    --azulMasClaro: #1c78a3;
+    --gris: #e8f1ee;
+    --degradado: linear-gradient(90deg, var(--azul), var(--azulMasClaro));
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalizes;
+}
+
+html{
+    font-size: 62.4%;
+    
+}
+
+body{
+    background: #f9f9f9;   
+}
+
+section{
+    min-height: 100vh;
+    padding: 0 9%;
+    padding-top: 7.5rem;
+    padding-bottom: 2rem;
+}
+
+html::-webkit-scrollbar{
+
+    width: 6px;
+    background-color: #222;
+    opacity: .6;
+
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--azulMasClaro);
+    border-radius: 5px;
+}
+
+
+/* INICIO*/
+
+.imagenFondo{
+    background-image: url(../images/lice6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.inicio{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;left: 0;
+    z-index: 30;
+}
+
+.content{
+    position: relative;
+    /* margin: 10rem; */
+    height: 100%;
+    width: 80%;
+}
+
+.contenido{
+    padding: 5rem;
+    background:rgb(0, 0, 0, .6);
+    margin: .4rem;
+}
+
+.esquinaUno{
+    position: absolute;
+    width: 35%;
+    height: 50%;
+    border-right: 10px solid var(--azul);
+    border-bottom: 10px solid var(--azul);
+    bottom: 0;
+    right: 0;
+}
+
+.esquinaDos{
+    position: absolute;
+    height: 50%;
+    width: 35%;
+    border-top: 10px solid var(--azul);
+    border-left: 10px solid var(--azul);
+    top: -1px;
+}
+
+.inicio .content h3{
+       font-size: 4rem; 
+       color: var(--gris);
+       text-transform: uppercase;
+}
+
+.inicio .content h3 span{
+    color: var(--azul);
+    text-transform: uppercase;
+}
+
+.inicio .content p{
+    font-size: 1.9rem;
+    color: #ddd;
+    padding: 1rem 0;
+}
+
+
+/*MISION Y VISION*/
+
+.container__misionVision div{
+    margin-top: 4rem;
+    background-color: var(--gris);
+    border-bottom: 5px solid var(--azul);
+    border-left: 5px solid var(--azul);
+    border-top-left-radius: 8rem;
+    border-bottom-right-radius: 8rem;
+    padding: 4rem;
+}
+
+.container__misionVision h3{
+    font-size: 2.8rem;
+}
+
+.container__misionVision p{
+    font-size: 1.6rem;
+}
+
+/* OJETIVOS */
+
+.objetivos{
+    background: var(--azul);
+    color: var(--blanco)
+}
+
+.contenedor__objetivos div{
+    margin: 9rem 2rem;
+}
+
+.contenedor__objetivos h3{
+    font-size: 2.8rem;
+    color: var(--azul);
+}
+
+.contenedor__objetivos p{
+    font-size: 1.8rem;
+    color: var(--blanco);
+    margin-top: 1rem;
+}
+
+.contenidoObjetivosFilosofia{
+    position: relative;
+}
+
+.contenidoObj{
+    padding: 5rem;
+    background-color: #222;
+    margin: .4rem;
+}
+
+
+.objetivosEsquinaUno{
+    position: absolute;
+    width: 30%;
+    height: 40%;
+    border-right: 10px solid var(--blanco);
+    border-bottom: 10px solid var(--blanco);
+    bottom: -9.5rem;
+    right: -5px;
+}
+
+.objetivosEsquinaDos{
+    position: absolute;
+    height: 40%;
+    width: 30%;
+    border-top: 10px solid var(--blanco);
+    border-left: 10px solid var(--blanco);
+    top: -9.5rem;
+    left: -5px;
+}
+
+
+@media(max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width:990){
+
+    section{
+        padding: 0 3%;
+        padding-top: 7.5rem;
+        padding-bottom: 2rem;
+    }
+
+}
+
+@media(max-width:768px){
+
+    
+
+    /* INICIO */
+
+    .inicio{
+        flex-flow: column-reverse;
+    }
+
+    .inicio .img img{
+        width: 100%
+    }
+
+    .inicio .content h3{
+        font-size: 3.6rem
+    }
+
+    .inicio .content p{
+        font-size: 1.5rem;
+    }
+
+}
+
+
+@media(max-width: 458px){
+    html{
+        font-size: 49%;
+    }
+
+}

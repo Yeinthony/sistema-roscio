@@ -5,8 +5,8 @@
             <img class="logo-navbar" src="<?php base_url() ?>assets/images/log.png" alt='Logo'/>
         </div>        
         <nav class="nav-bar">
-            <a href="#home">Home</a>
-            <a href="#home">Login</a>
+            <a href="http://localhost/sistema-roscio/indexView">Home</a>
+            <a href="http://localhost/sistema-roscio/login">Login</a>
         </nav>
     </header>
 
@@ -46,4 +46,4 @@
         
     </script>
 
-    <?php include("../sistema-roscio/app/Views/templates/header.php"); ?>
+    <?php include("../sistema-roscio/app/Views/templates/footer.php"); ?>
