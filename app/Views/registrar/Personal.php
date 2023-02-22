@@ -25,9 +25,11 @@
                             <label for="tipos" class="form-label">Tipo</label>
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Seleccione un tipo</option>
-                                <option value="1">Administrativo</option>
-                                <option value="2">Profesor</option>
-                                <option value="3">Obrero</option>
+                                <?php foreach($tipos as $tipo){ ?>
+                                    <option value="<?php echo($tipo['ID_tipos']) ?>">
+                                        <?php echo($tipo['Tipo']) ?>
+                                    </option>
+                                <?php }; ?>                                
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
@@ -37,8 +39,5 @@
         </div>
     </div>
 </div>
-
-                    
-
 
 <?php include("../sistema-roscio/app/Views/templates/footer.php"); ?>

@@ -15,15 +15,15 @@
                             <i class="fa-solid fa-clipboard-list"></i>
                             <span class="ms-1 d-none d-sm-inline">Registrar</span> 
                         </a>
-                        <ul class="subOptions-sidebar collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                        <ul class="subOptions-sidebar collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             <li>
-                                <a href="#" class="link-sidebar"> 
+                                <a href="registrar-tipos" class="link-sidebar"> 
                                     <i class="fa-solid fa-list-ul"></i>
                                     <span class="d-none d-sm-inline">Tipo</span> 
                                 </a>
                             </li>
                             <li>
-                                <a href="personal" class="link-sidebar"> 
+                                <a href="registrar-personal" class="link-sidebar"> 
                                      <i class="fa-solid fa-users"></i>
                                     <span class="d-none d-sm-inline">Personal</span> 
                                 </a>
@@ -43,13 +43,13 @@
                         </a>
                         <ul class="subOptions-sidebar collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                             <li>
-                                <a href="#" class="link-sidebar"> 
+                                <a href="ver-tipos" class="link-sidebar"> 
                                     <i class="fa-solid fa-list-ul"></i>
-                                    <span class="d-none d-sm-inline">Tipo</span> 
+                                    <span class="d-none d-sm-inline">Tipos</span> 
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="link-sidebar"> 
+                                <a href="ver-personal" class="link-sidebar"> 
                                      <i class="fa-solid fa-users"></i>
                                     <span class="d-none d-sm-inline">Personal</span> 
                                 </a>

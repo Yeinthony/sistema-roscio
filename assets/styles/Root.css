@@ -21,3 +21,53 @@ body{
     margin: 0;
     background-color: #efefef;
 }
+
+.btns{
+    text-decoration: none;
+    color: var(--blanco);
+    margin-right: .5rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+}
+
+.btns:hover{
+    color: var(--blanco);
+    opacity: .9;
+}
+
+.btns i{
+    
+    font-size: 1.2rem;
+    margin-left: .2rem;
+
+}
+
+.btnEditar{
+    background-color: var(--azulSecundario);
+}
+
+.btnEliminar{
+    background-color: #e01b14;
+}
+
+/* FORM BUSCAR */
+.formBuscar{
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formBuscar button{
+    width: 8rem;
+}
+
+.formBuscar button i{
+    margin-left: .5rem;
+}
+
+/* Checks */
+.container-checks{
+    width: 40vw;   
+    margin-left: auto;
+    margin-right: auto;
+}

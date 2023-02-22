@@ -40,9 +40,12 @@ $routes->get('salir', 'LoginController::cerrarSesion');
 $routes->get('inicio', 'InicioController::index');
 
 /* RUTAS DE REGISTRAR */
-$routes->get('personal', 'PersonalController::index');
+$routes->get('registrar-personal', 'PersonalController::index');
+$routes->get('registrar-tipos', 'TiposController::index');
 
-
+/* RUTAS DE VER */
+$routes->GET('ver-personal', 'PersonalController::ver');
+$routes->GET('ver-tipos', 'TiposController::ver');
 
 
 
