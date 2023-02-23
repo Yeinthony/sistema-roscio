@@ -42,6 +42,8 @@ $routes->get('inicio', 'InicioController::index');
 /* RUTAS DE REGISTRAR */
 $routes->get('registrar-personal', 'PersonalController::index');
 $routes->get('registrar-tipos', 'TiposController::index');
+$routes->post('registrar-tipos', 'TiposController::guardar');
+$routes->post('registrar-personal', 'PersonalController::guardar');
 
 /* RUTAS DE VER */
 $routes->GET('ver-personal', 'PersonalController::ver');

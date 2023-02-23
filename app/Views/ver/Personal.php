@@ -59,8 +59,8 @@
                                 <?php foreach($personal as $per){ ?>
                                     <tr class="">
                                         <td scope="row"> <?php echo($per['ID_personal']); ?> </td>
-                                        <td> <?php echo($per['Nombre']); ?> </td>
-                                        <td> <?php echo($per['Apellido']); ?> </td>
+                                        <td> <?php echo($per['primer_nombre']." ".$per['segundo_nombre']); ?> </td>
+                                        <td> <?php echo($per['primer_apellido']." ".$per['segundo_apellido']); ?>  </td>
                                         <td> <?php echo($per['CI']); ?> </td>
                                         <td> <?php echo($per['Tipo']); ?> </td>
                                         <td> 

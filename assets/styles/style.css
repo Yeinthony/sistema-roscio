@@ -1,30 +1,9 @@
 
 :root{
-    --blanco: #f9f9f9;
     --azul: #0a7aad;
     --azulMasClaro: #1c78a3;
     --gris: #e8f1ee;
     --degradado: linear-gradient(90deg, var(--azul), var(--azulMasClaro));
-}
-
-*{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    outline: none;
-    border: none;
-    text-transform: capitalizes;
-}
-
-html{
-    font-size: 62.4%;
-    
-}
-
-body{
-    background: #f9f9f9;   
 }
 
 section{
@@ -33,20 +12,6 @@ section{
     padding-top: 7.5rem;
     padding-bottom: 2rem;
 }
-
-html::-webkit-scrollbar{
-
-    width: 6px;
-    background-color: #222;
-    opacity: .6;
-
-}
-
-html::-webkit-scrollbar-thumb{
-    background: var(--azulMasClaro);
-    border-radius: 5px;
-}
-
 
 /* INICIO*/
 
