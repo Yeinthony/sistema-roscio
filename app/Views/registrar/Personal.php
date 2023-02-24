@@ -11,7 +11,7 @@
                     <form action="registrar-personal" method="post" class="row g-3">
                         <div class="col-md-6">
                             <label for="primer-nombre" class="form-label">Primer nombre</label>
-                            <input type="text" class="form-control" id="primer-nombre" name="primer-nombre"> 
+                            <input type="text" class="form-control" id="primer-nombre" name="primer-nombre" required> 
                         </div>
                         <div class="col-md-6">
                             <label for="segundo-nombre" class="form-label">Segundo nombre</label>
@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="primer-apellido" class="form-label">Primer Apellido</label>
-                            <input type="text" class="form-control" id="primer-apellido" name="primer-apellido"> 
+                            <input type="text" class="form-control" id="primer-apellido" name="primer-apellido" required> 
                         </div>
                         <div class="col-md-6">
                             <label for="segundo-apellido" class="form-label">Segundo Apellido</label>
@@ -27,12 +27,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="ci" class="form-label">CI</label>
-                            <input type="text" class="form-control" id="ci" name="ci">
+                            <input type="text" class="form-control" id="ci" name="ci" required>
                         </div>
                         <div class="mb-4">
                             <label for="tipos" class="form-label">Tipo</label>
-                            <select class="form-select" aria-label="Default select example" name="tipo">
-                                <option selected>Seleccione un tipo</option>
+                            <select class="form-select" aria-label="Default select example" name="tipo" required>
                                 <?php foreach($exito['tipos'] as $tipo){ ?>
                                     <option value="<?php echo($tipo['ID_tipos']) ?>">
                                         <?php echo($tipo['Tipo']) ?>

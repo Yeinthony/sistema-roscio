@@ -4,14 +4,18 @@
     
         <div class="col py-3 px-5">
             <div class="container">
-                <h4 class="title">Registar Tipo de Personal</h4>
+                <h4 class="title">Registar Entrada del Personal</h4>
             </div>
             <div class="card mt-5">
                 <div class="card-body">
-                    <form action="registrar-tipos" method="post">
+                    <form action="registrar-entrada" method="post">
                         <div class="mb-3">
-                            <label for="tipo" class="form-label">Tipo</label>
-                            <input type="text" class="form-control" id="tipo" name="tipo" required> 
+                            <label for="tipo" class="form-label">CI del Personal</label>
+                            <input type="text" class="form-control" id="tipo" name="ci" required> 
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Observación</label>
+                            <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="4" name="observacion"></textarea>
                         </div>
                       <?php if(gettype($exito['res']) === "boolean"){
                                 
@@ -24,7 +28,7 @@
                           <?php }else { ?>
 
                                     <div class="alert alert-danger" role="alert">
-                                        Problemas al registrar este tipo
+                                        Problemas al registrar entrada
                                     </div> 
 
                           <?php }

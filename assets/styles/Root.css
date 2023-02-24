@@ -22,12 +22,16 @@ body{
     background-color: #efefef;
 }
 
+.textarea{
+    resize: none;
+}
+
 .btns{
     text-decoration: none;
     color: var(--blanco);
     margin-right: .5rem;
     padding: .5rem 1rem;
-    border-radius: .5rem;
+    border-radius: .3rem;
 }
 
 .btns:hover{

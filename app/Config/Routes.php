@@ -40,10 +40,18 @@ $routes->get('salir', 'LoginController::cerrarSesion');
 $routes->get('inicio', 'InicioController::index');
 
 /* RUTAS DE REGISTRAR */
+
+// Personal 
 $routes->get('registrar-personal', 'PersonalController::index');
+$routes->post('registrar-personal', 'PersonalController::guardar');
+
+//Tipos
 $routes->get('registrar-tipos', 'TiposController::index');
 $routes->post('registrar-tipos', 'TiposController::guardar');
-$routes->post('registrar-personal', 'PersonalController::guardar');
+
+//Entrada
+$routes->get('registrar-entrada', 'RegistroController::indexEntrada');
+$routes->post('registrar-entrada', 'RegistroController::guardarEntrada');
 
 /* RUTAS DE VER */
 $routes->GET('ver-personal', 'PersonalController::ver');

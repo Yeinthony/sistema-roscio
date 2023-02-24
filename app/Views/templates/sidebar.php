@@ -29,9 +29,15 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="registrar-entrada" class="link-sidebar"> 
+                                    <i class="fa-solid fa-door-open"></i>
+                                    <span class="d-none d-sm-inline">Entrada</span>  
+                                </a>
+                            </li>
+                            <li>
                                 <a href="#" class="link-sidebar"> 
-                                    <i class="fa-solid fa-check"></i>
-                                    <span class="d-none d-sm-inline">Asistencia</span>  
+                                    <i class="fa-solid fa-door-closed"></i>
+                                    <span class="d-none d-sm-inline">Salida</span>  
                                 </a>
                             </li>
                         </ul>
