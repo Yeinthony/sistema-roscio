@@ -53,6 +53,10 @@ $routes->post('registrar-tipos', 'TiposController::guardar');
 $routes->get('registrar-entrada', 'RegistroController::indexEntrada');
 $routes->post('registrar-entrada', 'RegistroController::guardarEntrada');
 
+//Salida
+$routes->get('registrar-salida', 'RegistroController::indexSalida');
+$routes->post('registrar-salida', 'RegistroController::guardarSalida');
+
 /* RUTAS DE VER */
 $routes->GET('ver-personal', 'PersonalController::ver');
 $routes->GET('ver-tipos', 'TiposController::ver');

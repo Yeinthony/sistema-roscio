@@ -35,7 +35,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="link-sidebar"> 
+                                <a href="registrar-salida" class="link-sidebar"> 
                                     <i class="fa-solid fa-door-closed"></i>
                                     <span class="d-none d-sm-inline">Salida</span>  
                                 </a>

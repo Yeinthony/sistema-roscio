@@ -25,7 +25,7 @@ class RegistroModel extends Model{
 
     public function datosRegistro(){
         
-        $datos = $this->db->query("SELECT personal.ID_personal, registro.ID_registro, primer_nombre, primer_apellido, CI, registro.Fecha, registro.hora_entrada, registro.hora_salida, registro.observacion FROM personal INNER JOIN registro_personal ON personal.ID_personal = registro_personal.ID_personal INNER JOIN registro ON registro_personal.ID_registro = registro.ID_registro ORDER BY registro.Fecha DESC;");
+        $datos = $this->db->query("SELECT registro_personal.ID_registro, primer_nombre, primer_apellido, CI, registro.Fecha, registro.hora_entrada, registro.hora_salida, registro.observacion FROM personal INNER JOIN registro_personal ON personal.ID_personal = registro_personal.ID_personal INNER JOIN registro ON registro_personal.ID_registro = registro.ID_registro ORDER BY registro.Fecha DESC;");
 
         return $datos;
     }
@@ -54,6 +54,31 @@ class RegistroModel extends Model{
         return $query;
 
     } 
+   
+    public function registrarSalida($horaSalida, $id_registro){
+
+        $sql = 'UPDATE registro SET hora_salida = :horaSalida: WHERE registro.ID_registro = :id_registro:;';
+        $query = $this->db->query($sql, [
+            'horaSalida'     => $horaSalida,
+            'id_registro'     => $id_registro
+        ]);
+    
+        return $query;
+
+    } 
+
+    public function registrarSalidaObservacion($horaSalida, $id_registro, $observacionF){
+
+        $sql = 'UPDATE registro SET hora_salida = :horaSalida:, observacion = :observacionF: WHERE registro.ID_registro = :id_registro:;';
+        $query = $this->db->query($sql, [
+            'horaSalida'     => $horaSalida,
+            'id_registro'     => $id_registro,
+            'observacionF'     => $observacionF
+        ]);
+    
+        return $query;
+
+    } 
 
     public function guardarPersonalRegistro($ID_personal, $ID_registro){
 
@@ -68,5 +93,3 @@ class RegistroModel extends Model{
     } 
 
 }
-
-/* INSERT INTO `registro` (`ID_registro`, `Fecha`, `hora_entrada`, `hora_salida`, `observacion`) VALUES (NULL, '2023-02-23', '08:00:00', NULL, 'Se siente mal'); */

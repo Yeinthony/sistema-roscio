@@ -94,4 +94,54 @@ class RegistroController extends BaseController{
         return view('registrar/Entrada', $res);
     }
 
+    public function guardarSalida(){
+    
+        $ci = $this->request->getPost('ci');
+        $observacion = $this->request->getPost('observacion');
+
+        $modelo = $this->personal;
+        $query = $modelo->buscarPersonalCI($ci);
+        $datos = $query->getResultArray();
+
+        if(empty($datos[0])){
+            $res['exito'] = ['res' => $ci.' No esta registrado como personal'];
+            return view('registrar/Salida', $res);
+        }
+
+        $modelo2 = $this->registro;
+        $query2 = $modelo2->datosRegistro();
+        $datos2['registro'] = $query2->getResultArray();
+
+        date_default_timezone_set('America/Caracas');
+
+        $fechaActual = date("Y-m-d");
+        $horaSalida = date("h:i:s");
+
+        foreach($datos2['registro'] as $dato){
+
+            if($dato['Fecha'] === $fechaActual and $dato['CI'] === $ci){
+                
+                if(!empty($dato['hora_salida'])){
+                    $res['exito'] = ['res' =>'Ya existe un registro de salida para '.$dato['primer_nombre']." ".$dato['primer_apellido']." el dia de hoy"];
+                    return view('registrar/Salida', $res);
+                }
+
+                if(empty($dato['observacion'])){
+                    $res['exito'] = ['res' => $modelo2->registrarSalidaObservacion($horaSalida, $dato['ID_registro'], $observacion)];
+                    return view('registrar/Salida', $res);
+                }else{
+                    $res['exito'] = ['res' => $modelo2->registrarSalida($horaSalida, $dato['ID_registro'])];
+                    return view('registrar/Salida', $res);
+                }
+
+            }
+
+        }
+
+        
+    }
+
 }
+
+
+
