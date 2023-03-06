@@ -1,5 +1,15 @@
 .container-sidebar{
     background-color: var(--azulPrincipal);
+    
+}
+
+.container-table{
+   overflow-y: scroll;
+   max-height: 52vh;
+}
+
+.observacion-asistencia{
+    background-color: cadetblue;
 }
 
 .img-sidebar-header{

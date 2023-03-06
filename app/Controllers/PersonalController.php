@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\TiposModel;
 use App\Models\PersonalModel;
+use App\Models\RegistroModel;
 
 class PersonalController extends BaseController{
 
@@ -11,6 +12,7 @@ class PersonalController extends BaseController{
 
         $this->tipos = new TiposModel();
         $this->personal =  new PersonalModel();
+        $this->registro =  new RegistroModel();
 
     }
 
@@ -29,9 +31,14 @@ class PersonalController extends BaseController{
 
     public function ver(){
     
-        $modelo = $this->personal;
-        $query = $modelo->datosPersonal();
-        $datos['personal'] = $query->getResultArray();
+        $personal = $this->personal;
+        $tipos = $this->tipos;
+        $query = $personal->datosPersonal();
+        $query2 = $tipos->datosTipos();
+        $datos['res'] = [
+            'personal' => $query->getResultArray(),
+            'tipos' => $query2->getResultArray()
+        ];
 
         return view('ver/Personal', $datos);
     }
@@ -83,6 +90,54 @@ class PersonalController extends BaseController{
         }
 
         return view('registrar/Personal', $res);
+        
+    }
+
+    public function editarPersonal(){
+    
+        $id_personal = $this->request->getPost('id-personal');
+        $primerNombre = $this->request->getPost('primer-nombre');
+        $segundoNombre = $this->request->getPost('segundo-nombre');
+        $primerApellido = $this->request->getPost('primer-apellido');
+        $segundoApellido = $this->request->getPost('segundo-apellido');
+        $ci = $this->request->getPost('ci');
+        $tipoF = $this->request->getPost('tipo');
+
+        $personal = $this->personal;
+
+        $personal->actualizarPersonal($id_personal, $primerNombre, $segundoNombre, $primerApellido, $segundoApellido, $ci);
+
+        $personal->actualizarPersonalTipo($id_personal, $tipoF);
+
+        return redirect()->to(base_url('/ver-personal'));
+        
+    }
+
+    public function eliminarPersonal(){
+    
+        $id_personal = $this->request->getGet('id-personal');
+
+        $registro = $this->registro;
+        $personal = $this->personal;
+
+        $query = $registro->datosRegistroID($id_personal);
+        $datos['registro'] = $query->getResultArray();
+
+        foreach($datos['registro'] as $dato){
+            $registro->deleteRegistroPersonal($dato['ID_registro']);
+            $registro->deleteRegistro($dato['ID_registro']);
+        }
+
+        $exito['res'] = $personal->deletePersonal($id_personal);
+
+        if($exito['res']){
+   
+            return redirect()->to(base_url('/ver-personal'));
+
+        }
+
+        $res['exito'] = ['res' => 'Problemas al eliminar personal'];
+        return view('ver/Personal', $res);
         
     }
 

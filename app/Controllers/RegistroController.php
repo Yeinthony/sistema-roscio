@@ -31,13 +31,14 @@ class RegistroController extends BaseController{
 
     public function ver(){
     
-        $modelo = $this->tipos;
-        $query = $modelo->datosTipos();
-        $datos['tipos'] = $query->getResultArray();
+        $modelo = $this->registro;
+        $query = $modelo->datosRegistro();
+        $datos['registro'] = $query->getResultArray();
 
-        return view('ver/Tipos', $datos);
+        return view('ver/Asistencia', $datos);
 
     }
+    
 
     public function guardarEntrada(){
     
@@ -138,6 +139,42 @@ class RegistroController extends BaseController{
 
         }
 
+        
+    }
+
+    public function editarObservacion(){
+    
+        $observacion = $this->request->getPost('observacion');
+        $id_registro = $this->request->getPost('id-registro');
+
+        $registro = $this->registro;
+        $registro->editarObservacion($observacion, $id_registro);
+
+        return redirect()->to(base_url('/ver-asistencia'));
+        
+    }
+
+    public function eliminarRegistro(){
+    
+        $id_registro = $this->request->getGet('id-registro');
+
+        $registro = $this->registro;  
+        $exito['res'] = $registro->deleteRegistroPersonal($id_registro);
+
+        if($exito['res']){
+
+            $exito2['res'] = $registro->deleteRegistro($id_registro);
+
+            if($exito2['res']){
+
+                return redirect()->to(base_url('/ver-asistencia'));
+
+            }
+
+        }
+
+        $res['exito'] = ['res' => 'Problemas al eliminar tipo'];
+        return view('ver/Tipos', $res);
         
     }
 

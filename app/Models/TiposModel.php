@@ -32,6 +32,40 @@ class TiposModel extends Model{
         
         return $query;
 
-    } 
+    }
+
+    public function buscarTipoID($id_tipo){
+        
+        $sql = 'DELETE FROM tipos WHERE tipos.ID_tipos = :id_tipo:';
+        $query = $this->db->query($sql, [
+            'id_tipo'     => $id_tipo
+        ]);
+        
+        return $query;
+
+    }
+    
+    public function deleteTipo($id_tipo){
+        
+        $sql = 'DELETE FROM tipos WHERE tipos.ID_tipos = :id_tipo:';
+        $query = $this->db->query($sql, [
+            'id_tipo'     => $id_tipo
+        ]);
+        
+        return $query;
+    }
+
+    public function editarTipo($id_tipo, $tipo){
+        
+        $sql = 'UPDATE tipos SET Tipo = :tipo: WHERE tipos.ID_tipos = :id_tipo:;';
+        $query = $this->db->query($sql, [
+            'tipo'     => $tipo,
+            'id_tipo'     => $id_tipo
+        ]);
+        
+        return $query;
+    }
 
 }
+
+/* UPDATE `tipos` SET `Tipo` = 'Animador' WHERE `tipos`.`ID_tipos` = 7; */

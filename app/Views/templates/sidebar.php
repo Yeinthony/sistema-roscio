@@ -61,7 +61,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="link-sidebar"> 
+                                <a href="ver-asistencia" class="link-sidebar"> 
                                     <i class="fa-solid fa-check"></i>
                                     <span class="d-none d-sm-inline">Asistencia</span>  
                                 </a>

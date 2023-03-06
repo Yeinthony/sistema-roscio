@@ -60,6 +60,17 @@ $routes->post('registrar-salida', 'RegistroController::guardarSalida');
 /* RUTAS DE VER */
 $routes->GET('ver-personal', 'PersonalController::ver');
 $routes->GET('ver-tipos', 'TiposController::ver');
+$routes->GET('ver-asistencia', 'RegistroController::ver');
+
+/* RUTAS DE ELIMINAR */
+$routes->get('eliminar-personal', 'PersonalController::eliminarPersonal');
+$routes->get('eliminar-tipo', 'TiposController::eliminarTipo');
+$routes->get('eliminar-registro', 'RegistroController::eliminarRegistro');
+
+/* RUTAS DE EDITAR */
+$routes->post('editar-tipos', 'TiposController::editarTipo');
+$routes->post('editar-personal', 'PersonalController::editarPersonal');
+$routes->post('editar-asistencia', 'RegistroController::editarObservacion');
 
 
 
