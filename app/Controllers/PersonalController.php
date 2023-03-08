@@ -43,6 +43,45 @@ class PersonalController extends BaseController{
         return view('ver/Personal', $datos);
     }
 
+    public function buscarPersonal(){
+    
+        $ciCheck = $this->request->getPost('check-ci');
+        $tipoCheck = $this->request->getPost('check-tipo');
+        $dateForm = $this->request->getPost('date-form');
+
+        $personal = $this->personal;
+        $tipos = $this->tipos;
+
+        if(!empty($ciCheck)){
+
+            $query = $personal->buscarPersonalCiTipo($dateForm);;
+            $query2 = $tipos->datosTipos();
+            $datos['res'] = [
+                'personal' => $query->getResultArray(),
+                'tipos' => $query2->getResultArray()
+            ];
+
+            return view('ver/Personal', $datos);
+
+        }
+
+        if(!empty($tipoCheck)){
+
+            $query = $personal->buscarPersonalPorTipo($dateForm);;
+            $query2 = $tipos->datosTipos();
+            $datos['res'] = [
+                'personal' => $query->getResultArray(),
+                'tipos' => $query2->getResultArray()
+            ];
+
+            return view('ver/Personal', $datos);
+
+        }
+
+        return redirect()->to(base_url('/ver-personal'));
+        
+    }
+
     public function guardar(){
     
         $primerNombre = $this->request->getPost('primer-nombre');
@@ -95,7 +134,7 @@ class PersonalController extends BaseController{
 
     public function editarPersonal(){
     
-        $id_personal = $this->request->getPost('id-personal');
+        $id_personal = intval($this->request->getPost('id-personal'));
         $primerNombre = $this->request->getPost('primer-nombre');
         $segundoNombre = $this->request->getPost('segundo-nombre');
         $primerApellido = $this->request->getPost('primer-apellido');

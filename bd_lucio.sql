@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-02-2023 a las 20:09:28
+-- Tiempo de generación: 09-03-2023 a las 00:28:57
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -36,19 +36,6 @@ CREATE TABLE `personal` (
   `CI` varchar(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `personal`
---
-
-INSERT INTO `personal` (`ID_personal`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `CI`) VALUES
-(7, 'Yeinthony', 'Adrian', 'Vargas', 'Herrera', '27867019'),
-(8, 'Julio', 'Gerardo', 'Lopez', 'Rodriguez', '28963214'),
-(9, 'Daniela', 'Alexandra', 'Medina', 'Garcia', '15789521'),
-(10, 'Pedro', 'Alejandro', 'Gonzales', 'Torrealba', '18963547'),
-(19, 'Carlos', 'Miguel', 'Rodriguez', 'Alvarez', '14789632'),
-(20, 'Claudia', 'Katherine', 'De la Mancha', 'Hidalgo', '11024896'),
-(22, 'Maria', 'Anastasia', 'Gutierrez', 'Campos', '13265874');
-
 -- --------------------------------------------------------
 
 --
@@ -61,19 +48,6 @@ CREATE TABLE `personal_tipos` (
   `ID_tipos` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `personal_tipos`
---
-
-INSERT INTO `personal_tipos` (`ID_personal_tipos`, `ID_personal`, `ID_tipos`) VALUES
-(5, 7, 1),
-(6, 8, 3),
-(7, 9, 2),
-(8, 10, 2),
-(9, 19, 3),
-(10, 20, 1),
-(12, 22, 4);
-
 -- --------------------------------------------------------
 
 --
@@ -84,7 +58,8 @@ CREATE TABLE `registro` (
   `ID_registro` int(11) NOT NULL,
   `Fecha` date DEFAULT NULL,
   `hora_entrada` time DEFAULT NULL,
-  `hora_salida` time DEFAULT NULL
+  `hora_salida` time DEFAULT NULL,
+  `observacion` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -109,17 +84,6 @@ CREATE TABLE `tipos` (
   `ID_tipos` int(11) NOT NULL,
   `Tipo` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `tipos`
---
-
-INSERT INTO `tipos` (`ID_tipos`, `Tipo`) VALUES
-(1, 'Administrativo'),
-(2, 'Profesor'),
-(3, 'Obrero'),
-(4, 'Ambiente'),
-(5, 'Portero');
 
 -- --------------------------------------------------------
 
@@ -192,31 +156,31 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `ID_personal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `ID_personal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `personal_tipos`
 --
 ALTER TABLE `personal_tipos`
-  MODIFY `ID_personal_tipos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID_personal_tipos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `ID_registro` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de la tabla `registro_personal`
 --
 ALTER TABLE `registro_personal`
-  MODIFY `ID_registro_personal` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_registro_personal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `tipos`
 --
 ALTER TABLE `tipos`
-  MODIFY `ID_tipos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_tipos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -232,8 +196,8 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `personal_tipos`
 --
 ALTER TABLE `personal_tipos`
-  ADD CONSTRAINT `personal_tipos_ibfk_2` FOREIGN KEY (`ID_tipos`) REFERENCES `tipos` (`ID_tipos`),
-  ADD CONSTRAINT `personal_tipos_ibfk_3` FOREIGN KEY (`ID_personal`) REFERENCES `personal` (`ID_personal`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `personal_tipos_ibfk_1` FOREIGN KEY (`ID_tipos`) REFERENCES `tipos` (`ID_tipos`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `personal_tipos_ibfk_2` FOREIGN KEY (`ID_personal`) REFERENCES `personal` (`ID_personal`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `registro_personal`

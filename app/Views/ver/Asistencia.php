@@ -8,37 +8,30 @@
             </div>
             <div class="container-formBuscar">
                 <div class="formBuscar">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="buscar-asistencia" name="buscar-asistencia">
-                        <button class="btn btn-outline-primary" type="submit">
-                            Buscar
-                            <i class="fa-solid fa-magnifying-glass"></i> 
-                        </button>
+                    <form action="buscar-asistencia" method="post">
+                        <div class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="date-form" name="date-form">
+                            <button class="btn btn-outline-primary" type="submit">
+                                Buscar
+                                <i class="fa-solid fa-magnifying-glass"></i> 
+                            </button>
+                        </div>
+                        <div class="container-checks mt-4">    
+                            <div class="checks mt-2">
+                                <div class="title-formBuscar form-check form-check-inline">
+                                    <span>Buscar Por: </span>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="check-ci" value="ci" name="check-ci" checked>
+                                    <label class="form-check-label" for="check-ci">CI</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="check-fecha" value="fecha" name="check-fecha">
+                                    <label class="form-check-label" for="check-fecha">Fecha</label>
+                                </div>
+                            </div>
+                        </div>
                     </form>
-                </div>
-                <div class="container-checks mt-4">
-                    
-                    <div class="checks mt-2">
-                        <div class="title-formBuscar form-check form-check-inline">
-                            <span>Buscar Por: </span>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="check-nombre" value="check-fecha">
-                            <label class="form-check-label" for="check-nombre">Nombre</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="check-ci" value="check-ci" checked>
-                            <label class="form-check-label" for="check-ci">CI</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="check-fecha" value="check-fecha">
-                            <label class="form-check-label" for="check-fecha">Fecha</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="check-tipo" value="check-fecha">
-                            <label class="form-check-label" for="check-tipo">Tipo</label>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="card mt-4">
@@ -141,39 +134,22 @@
 
 <script>
 
-let $checkboxNombre = document.getElementById('check-nombre');
 let $checkboxCI = document.getElementById('check-ci');
 let $checkboxFecha = document.getElementById('check-fecha');
-let $checkboxTipo = document.getElementById('check-tipo');
-let $input = document.getElementById('buscar-asistencia');
+
+let $input = document.getElementById('date-form');
 
 document.addEventListener("change", ()=>{
 
-    if($checkboxNombre.checked){
-        $checkboxCI.checked = false;
-        $checkboxFecha.checked = false;
-        $checkboxTipo.checked = false;
-    }
-
     if($checkboxCI.checked){
-        $checkboxNombre.checked = false;
         $checkboxFecha.checked = false;
-        $checkboxTipo.checked = false;
     }
 
     if($checkboxFecha.checked){
         $input.type = "date";
-        $checkboxNombre.checked = false;
         $checkboxCI.checked = false;
-        $checkboxTipo.checked = false;
     }else{
         $input.type = "text";
-    }
-
-    if($checkboxTipo.checked){
-        $checkboxNombre.checked = false;
-        $checkboxCI.checked = false;
-        $checkboxFecha.checked = false;
     }
 
 });

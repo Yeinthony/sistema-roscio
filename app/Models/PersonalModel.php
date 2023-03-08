@@ -32,6 +32,26 @@ class PersonalModel extends Model{
         return $query;
     }
 
+    public function buscarPersonalCiTipo($ci){
+        
+        $sql = 'SELECT personal.ID_personal, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, CI, tipos.Tipo FROM personal INNER JOIN personal_tipos ON personal.ID_personal = personal_tipos.ID_personal INNER JOIN tipos ON personal_tipos.ID_tipos = tipos.ID_tipos WHERE CI = :ci:;';
+        $query = $this->db->query($sql, [
+            'ci'     => $ci
+        ]);
+
+        return $query;
+    } 
+
+    public function buscarPersonalPorTipo($tipo){
+        
+        $sql = 'SELECT personal.ID_personal, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, CI, tipos.Tipo FROM personal INNER JOIN personal_tipos ON personal.ID_personal = personal_tipos.ID_personal INNER JOIN tipos ON personal_tipos.ID_tipos = tipos.ID_tipos WHERE Tipo = :tipo:;';
+        $query = $this->db->query($sql, [
+            'tipo'     => $tipo
+        ]);
+
+        return $query;
+    } 
+
     public function buscarPersonalTipo($id_tipo){
         
         $sql = 'SELECT personal.ID_personal, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, CI, tipos.Tipo FROM personal INNER JOIN personal_tipos ON personal.ID_personal = personal_tipos.ID_personal INNER JOIN tipos ON personal_tipos.ID_tipos = tipos.ID_tipos WHERE tipos.ID_tipos = :id_tipo:';
@@ -72,7 +92,7 @@ class PersonalModel extends Model{
 
         /* UPDATE personal SET primer_nombre = 'Julio', segundo_nombre = 'Alberto', primer_apellido = 'Gutierrez', segundo_apellido = 'Campos', CI = '14798632' WHERE `personal`.`ID_personal` = 32; */
         
-        return 'UPDATE personal SET primer_nombre ='.$primerNombre.', segundo_nombre = '.$segundoNombre.', primer_apellido = '.$primerApellido.', segundo_apellido = '.$segundoApellido.', CI = '.$ci.' WHERE personal.ID_personal = :id_personal:;';;
+        return $query;
 
     } 
 

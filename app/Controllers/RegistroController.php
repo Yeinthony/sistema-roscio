@@ -38,6 +38,36 @@ class RegistroController extends BaseController{
         return view('ver/Asistencia', $datos);
 
     }
+
+    public function buscarAsistencia(){
+
+        $ciCheck = $this->request->getPost('check-ci');
+        $fechaCheck = $this->request->getPost('check-fecha');
+        $dateForm = strval($this->request->getPost('date-form'));
+
+        $registro = $this->registro;
+
+        if(!empty($ciCheck)){
+
+            $query = $registro->datosRegistroCI($dateForm);
+            $datos['registro'] = $query->getResultArray();
+
+            return view('ver/Asistencia', $datos);
+
+        }
+
+        if(!empty($fechaCheck)){
+
+            $query = $registro->datosRegistroFecha($dateForm);
+            $datos['registro'] = $query->getResultArray();
+
+            return view('ver/Asistencia', $datos);
+
+        }
+
+        return redirect()->to(base_url('/ver-asistencia'));
+
+    }
     
 
     public function guardarEntrada(){

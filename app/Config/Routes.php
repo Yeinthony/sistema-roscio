@@ -72,6 +72,12 @@ $routes->post('editar-tipos', 'TiposController::editarTipo');
 $routes->post('editar-personal', 'PersonalController::editarPersonal');
 $routes->post('editar-asistencia', 'RegistroController::editarObservacion');
 
+/* RUTAS DE BUSCAR */
+$routes->post('buscar-tipo', 'TiposController::buscaPorTipo');
+$routes->post('buscar-personal', 'PersonalController::buscarPersonal');
+$routes->post('buscar-asistencia', 'RegistroController::buscarAsistencia');
+
+
 
 
 /*

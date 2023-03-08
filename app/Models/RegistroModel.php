@@ -32,9 +32,29 @@ class RegistroModel extends Model{
 
     public function datosRegistroID($id_personal){
         
-        $sql = 'SELECT registro_personal.ID_registro, primer_nombre, primer_apellido, CI, registro.Fecha, registro.hora_entrada, registro.hora_salida, registro.observacion FROM personal INNER JOIN registro_personal ON personal.ID_personal = registro_personal.ID_personal INNER JOIN registro ON registro_personal.ID_registro = registro.ID_registro WHERE personal.ID_personal = :id_personal:';
+        $sql = 'SELECT registro_personal.ID_registro, primer_nombre, primer_apellido, CI, registro.Fecha, registro.hora_entrada, registro.hora_salida, registro.observacion FROM personal INNER JOIN registro_personal ON personal.ID_personal = registro_personal.ID_personal INNER JOIN registro ON registro_personal.ID_registro = registro.ID_registro WHERE personal.ID_personal = :id_personal:;';
         $query = $this->db->query($sql, [
             'id_personal'     => $id_personal
+        ]);
+
+        return $query;
+    }
+
+    public function datosRegistroCI($ci){
+        
+        $sql = 'SELECT registro_personal.ID_registro, primer_nombre, primer_apellido, CI, registro.Fecha, registro.hora_entrada, registro.hora_salida, registro.observacion FROM personal INNER JOIN registro_personal ON personal.ID_personal = registro_personal.ID_personal INNER JOIN registro ON registro_personal.ID_registro = registro.ID_registro WHERE personal.CI = :ci: ORDER BY registro.Fecha DESC;';
+        $query = $this->db->query($sql, [
+            'ci'     => $ci
+        ]);
+
+        return $query;
+    }
+
+    public function datosRegistroFecha($fecha){
+        
+        $sql = "SELECT registro_personal.ID_registro, primer_nombre, primer_apellido, CI, registro.Fecha, registro.hora_entrada, registro.hora_salida, registro.observacion FROM personal INNER JOIN registro_personal ON personal.ID_personal = registro_personal.ID_personal INNER JOIN registro ON registro_personal.ID_registro = registro.ID_registro WHERE registro.Fecha = :fecha: ORDER BY registro.Fecha DESC;";
+        $query = $this->db->query($sql, [
+            'fecha'     => $fecha
         ]);
 
         return $query;

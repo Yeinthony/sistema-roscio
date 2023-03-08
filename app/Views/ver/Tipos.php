@@ -8,8 +8,8 @@
             </div>
             <div class="container-formBuscar">
                 <div class="formBuscar">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <form class="d-flex" action="buscar-tipo" method="post">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="tipo" name="tipo">
                         <button class="btn btn-outline-primary" type="submit">
                             Buscar
                             <i class="fa-solid fa-magnifying-glass"></i> 

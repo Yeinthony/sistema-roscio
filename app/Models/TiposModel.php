@@ -23,9 +23,9 @@ class TiposModel extends Model{
         return $datos;
     }
 
-    public function guardarTipo($tipo){
-
-        $sql = 'INSERT INTO tipos (ID_tipos, Tipo) VALUES (NULL, :tipo:)';
+    public function buscarTipo($tipo){
+        
+        $sql = 'SELECT * FROM `tipos` WHERE Tipo = :tipo:;';
         $query = $this->db->query($sql, [
             'tipo'     => $tipo
         ]);
@@ -34,11 +34,11 @@ class TiposModel extends Model{
 
     }
 
-    public function buscarTipoID($id_tipo){
-        
-        $sql = 'DELETE FROM tipos WHERE tipos.ID_tipos = :id_tipo:';
+    public function guardarTipo($tipo){
+
+        $sql = 'INSERT INTO tipos (ID_tipos, Tipo) VALUES (NULL, :tipo:)';
         $query = $this->db->query($sql, [
-            'id_tipo'     => $id_tipo
+            'tipo'     => $tipo
         ]);
         
         return $query;

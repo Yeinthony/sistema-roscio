@@ -38,6 +38,22 @@ class TiposController extends BaseController{
 
     }
 
+    public function buscaPorTipo(){
+
+        $tipo = $this->request->getPost('tipo');
+
+        $mensaje = session('mensaje');
+        $tipos = $this->tipos;
+        $query = $tipos->buscarTipo($tipo);
+        $datos['res'] = [
+            'tipos' => $query->getResultArray(),
+            'mensaje' => $mensaje
+        ];
+
+        return view('ver/Tipos', $datos);
+
+    }
+
     public function guardar(){
     
         $tipo = $this->request->getPost('tipo');

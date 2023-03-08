@@ -8,29 +8,30 @@
             </div>
             <div class="container-formBuscar">
                 <div class="formBuscar">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                        <button class="btn btn-outline-primary" type="submit">
-                            Buscar
-                            <i class="fa-solid fa-magnifying-glass"></i> 
-                        </button>
+                    <form action="buscar-personal" method="post">
+                        <div class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="date-form" name="date-form">
+                            <button class="btn btn-outline-primary" type="submit">
+                                Buscar
+                                <i class="fa-solid fa-magnifying-glass"></i> 
+                            </button>
+                        </div>
+                        <div class="container-checks mt-4">         
+                            <div class="checks mt-2">
+                                <div class="title-formBuscar form-check form-check-inline">
+                                    <span>Buscar Por: </span>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="check-ci" value="ci" name="check-ci" checked>
+                                    <label class="form-check-label" for="inlineCheckbox2">CI</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="check-tipo" value="tipo" name="check-tipo">
+                                    <label class="form-check-label" for="inlineCheckbox2">Tipo</label>
+                                </div>
+                            </div>
+                        </div>
                     </form>
-                </div>
-                <div class="container-checks mt-4">
-                    
-                    <div class="checks mt-2">
-                        <div class="title-formBuscar form-check form-check-inline">
-                            <span>Buscar Por: </span>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="check-ci" value="check-ci" checked>
-                            <label class="form-check-label" for="inlineCheckbox2">CI</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="check-tipo" value="check-tipo">
-                            <label class="form-check-label" for="inlineCheckbox2">Tipo</label>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="card mt-4">
