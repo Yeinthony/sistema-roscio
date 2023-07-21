@@ -1,6 +1,24 @@
-# CodeIgniter 4 Framework
+## Descripción 🏝
 
-## What is CodeIgniter?
+Sistema de control de asistencia desarrollado para el L.N Juan German Roscio, ubicado en San Juan Edo. Guarico, Venezuela.
+
+## Autor ✒️
+**Yeinthony Adrian Vargas Herrera**
+
+* [LinkedIn](https://www.linkedin.com/in/yeinthony-vargas-700987221/)
+* [Telegram](https://t.me/Yeinthony)
+* [Discord](https://discordapp.com/users/796375277211090945)
+  
+## Contratación
+Si quieres contratarme puedes escribirme a yeinthonyvargas@gmail.com para consultas.
+
+## Licencia 📄
+MIT Public License v3.0
+No puede usarse comencialmente.
+
+## CodeIgniter 4 Framework
+
+### What is CodeIgniter?
 
 CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
 More information can be found at the [official site](https://codeigniter.com).
@@ -14,7 +32,7 @@ More information about the plans for version 4 can be found in [CodeIgniter 4](h
 The user guide corresponding to the latest version of the framework can be found
 [here](https://codeigniter4.github.io/userguide/).
 
-## Important Change with index.php
+### Important Change with index.php
 
 `index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
 for better security and separation of components.
@@ -25,7 +43,7 @@ framework are exposed.
 
 **Please** read the user guide for a better explanation of how CI4 works!
 
-## Repository Management
+### Repository Management
 
 We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
 We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
@@ -34,13 +52,13 @@ FEATURE REQUESTS.
 This repository is a "distribution" one, built by our release preparation script.
 Problems with it can be raised on our forum, or as issues in the main repository.
 
-## Contributing
+### Contributing
 
 We welcome contributions from the community.
 
 Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
 
-## Server Requirements
+### Server Requirements
 
 PHP version 7.4 or higher is required, with the following extensions installed:
 
